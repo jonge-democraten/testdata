@@ -666,6 +666,9 @@ if __name__ == "__main__":
 			row = list(data[rownum])
 			row[random.choice([1,2,3,4,5,6,7,8,9,10])] = base64.b64decode(random.choice(NAUGTY_STRINGS))
 			data[rownum] = tuple(row)
+	else:
+		print "Unknown type %s. Should be normal or fuzzy" % (datatype,)
+		sys.exit()
 	if fileformat == "excel":
 		wb = openpyxl.Workbook()
 		ws = wb.active
@@ -673,6 +676,9 @@ if __name__ == "__main__":
 		for row in data:
 			ws.append(row)
 		wb.save(filename)
+	else:
+		print "Unknown format %s. Should be excel" % (fileformat,)
+		sys.exit()
 
 
 
