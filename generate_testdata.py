@@ -644,7 +644,7 @@ if __name__ == "__main__":
 		print "\tcount: Number of fake members."
 		print "\ttype: Type of member data"
 		print "\t\tnormal: plain member data"
-		print "\t\tfuzzy: (not implemented) messy data"
+		print "\t\tfuzzy: messy data intended to test tools"
 		print "\tformat: output format"
 		print "\t\texcel: MS Excel format"
 		print "\tfilaneme: Filename to write output to"
