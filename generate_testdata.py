@@ -95,7 +95,7 @@ CITIES = [
 	'Anerveen',  'Anevelde',  'Angeren',  'Angerlo',  'Anjum',  'Ankeveen',  
 	'Anloo',  'Anna Paulowna',  'Annen',  'Annerveensche Kanaal',  'Ansen',  
 	'Apeldoorn',  'Appelscha',  'Appeltern',  'Appingedam',  'Arcen',  
-	'Arkel',  'Arnemuiden',  'Arnhem',  'ArriÃ«n',  'Arum',  'Asch',  
+	'Arkel',  'Arnemuiden',  'Arnhem',  'Arriën',  'Arum',  'Asch',  
 	'Asperen',  'Assen',  'Assendelft',  'Asten',  'Augsbuurt',  
 	'Augustinusga',  'Austerlitz',  'Avenhorn',  'Axel',  'Azewijn'
 ]
