@@ -101,6 +101,9 @@ CITIES = [
 	'Augustinusga',  'Austerlitz',  'Avenhorn',  'Axel',  'Azewijn'
 ]
 
+MUNICIPALITIES = [
+    'Utrecht', 'Amsterdam', '\'s-Gravenhage', 'Den Haag', 'Rotterdam'
+]
 
 # Source: https://github.com/minimaxir/big-list-of-naughty-strings
 NAUGTY_STRINGS = [
@@ -572,7 +575,7 @@ NAUGTY_STRINGS = [
 HEADER = [
 	'Relatienummer', 'Volledige naam', 'Adres: Achternaam', 'Adres: Tussenvoegsel', 
 	'Adres: Voorletters', 'Adres: Straatnaam', 'Adres: Huisnummer', 
-	'Adres: Hnr Toevoeging', 'Adres: Postcode', 'Adres: Woonplaats, Gemeente',
+	'Adres: Hnr Toevoeging', 'Adres: Postcode', 'Adres: Woonplaats', 'Gemeente',
 	'Adres: Land', 'Geen lid sinds', 'Geen abonnement sinds', 'Is lid D66', 
 	'Stemrecht D66', 'Is lid JD', 'Stemrecht JD', 'E-mail privé', 
 	'Telefoon: Mobiel', 'Telefoon: Prive', 'Geslacht', 'Geboortedatum', 
@@ -598,13 +601,14 @@ def gen_members(n):
 		streetnumberaddition = random.choice(['', '' 'a', 'b'])
 		postcode = str(random.randrange(1000, 9999))+random.choice(LETTERS)+random.choice(LETTERS)
 		city = random.choice(CITIES)
+		municipality = random.choice(MUNICIPALITIES)
 		country = "NEDERLAND"
 		notamembersince = '' # TODO: Pick random date
 		nosubscriptionsince = '' # TODO: Pick random date
-		isd66member = random.choice(['ja', 'nee'])
-		canvoted66 = random.choice(['ja', 'nee'])
-		isjdmember = random.choice(['ja', 'nee'])
-		canvotejd = random.choice(['ja', 'nee'])
+		isd66member = random.choice(['Ja', 'Nee'])
+		canvoted66 = random.choice(['Ja', 'Nee'])
+		isjdmember = random.choice(['Ja', 'Nee'])
+		canvotejd = random.choice(['Ja', 'Nee'])
 		email = gen_email(fullname)
 		telmob = '06%08d' % (random.randrange(0,99999999),)
 		telpriv = ''
@@ -624,7 +628,7 @@ def gen_members(n):
 		yield (
 			str(memberid), fullname, last.split()[-1], nameinsertion, first,
 			streetname, streetnumber, streetnumberaddition, postcode,
-			city, country, notamembersince, nosubscriptionsince,
+			city, municipality, country, notamembersince, nosubscriptionsince,
 			isd66member, canvoted66, isjdmember, canvotejd, email,
 			telmob, telpriv, sex, birthdate, missingdata,
 			freetexttest, salutationformal, salutationinformal, preferedpaymentmethod,
