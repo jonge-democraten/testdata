@@ -112,13 +112,6 @@ HEADER = [
 	'Contact: Bulk-e-mail niet toestaan', 'Overleden'
 ]
 
-# Relatienummer, Volledige naam, Adres: Achternaam, Adres: Tussenvoegsel, Adres: Voorletters
-# Adres: Straatnaam, Adres: Huisnummer, Adres: Hnr Toevoeging, Adres: Postcode	
-# Adres: Woonplaats, Gemeente,	Adres: Land, Geen lid sinds, Geen abonnement sinds,
-# Is lid D66, Stemrecht D66, Is lid JD, Stemrecht JD, E-mail privé,
-# Telefoon: Mobiel, Telefoon: Prive, Geslacht, Geboortedatum, Ontbrekende gegevens,
-# Vrij tekstveld test, Aanhef formeel, Aanhef informeel, Betaalmethodevoorkeur,
-# Gewijzigd op, Contact: Bulk-e-mail niet toestaan, Overleden
 def gen_members(n):
 	"""Generate n unique members.
 	"""
