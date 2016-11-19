@@ -649,28 +649,30 @@ if __name__ == "__main__":
 		print "\t\texcel: MS Excel format"
 		print "\tfilaneme: Filename to write output to"
 		sys.exit()
-count = int(sys.argv[1])
-datatype = sys.argv[2]
-fileformat = sys.argv[3]
-filename = sys.argv[4]
 
-if datatype == "normal":
-	data = [row for row in gen_members(count)]
-elif datatype == "fuzzy":
-	data = [row for row in gen_members(count)]
-	numfuzzyrows = int(len(data)*0.5) # 50% of rows wil contain fuzzy data
-	fuzzyrows = random.sample(range(len(data)), numfuzzyrows)
-	for rownum in fuzzyrows:
-		row = list(data[rownum])
-		row[random.choice([1,2,3,4,5,6,7,8,9,10])] = base64.b64decode(random.choice(NAUGTY_STRINGS))
-		data[rownum] = tuple(row)
-if fileformat == "excel":
-	wb = openpyxl.Workbook()
-	ws = wb.active
-	ws.append(HEADER)
-	for row in data:
-		ws.append(row)
-	wb.save(filename)
+	# Parse arguments
+	count = int(sys.argv[1])
+	datatype = sys.argv[2]
+	fileformat = sys.argv[3]
+	filename = sys.argv[4]
+
+	if datatype == "normal":
+		data = [row for row in gen_members(count)]
+	elif datatype == "fuzzy":
+		data = [row for row in gen_members(count)]
+		numfuzzyrows = int(len(data)*0.5) # 50% of rows wil contain fuzzy data
+		fuzzyrows = random.sample(range(len(data)), numfuzzyrows)
+		for rownum in fuzzyrows:
+			row = list(data[rownum])
+			row[random.choice([1,2,3,4,5,6,7,8,9,10])] = base64.b64decode(random.choice(NAUGTY_STRINGS))
+			data[rownum] = tuple(row)
+	if fileformat == "excel":
+		wb = openpyxl.Workbook()
+		ws = wb.active
+		ws.append(HEADER)
+		for row in data:
+			ws.append(row)
+		wb.save(filename)
 
 
 
